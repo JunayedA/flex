@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <style>
+        .header, .nav, .main, .sidebar, .advertise, .footer{
+            background-color: bisque;
+            border: 2px solid tomato;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .herder{
+            grid-area: header;
+        }
+        .nav{
+            grid-area: nav;
+        }
+        .main{
+            grid-area: main;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .advertise{
+            grid-area: advertise;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .container{
+            display: grid;
+            grid-template-areas:  
+            /* "header header header header"
+            "nav main main sidebar"
+            "nav main main advertise"
+            "footer footer foooter footer"; */
+            "header"
+            "main"
+            "nav"
+            "sidebar main"
+            "advertise"
+            "footer";
+        }
+        @media screen and (max-width:576){
+            .container{
+                grid-template-columns: 
+                "header"
+                "nav"
+                "main"
+                "sidebar"
+                "advertise"
+                "footer";
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <header class="header">
+        <h3>The header</h3>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="">nav-1</a></li>
+            <li><a href="">nav-2</a></li>
+            <li><a href="">nav-3</a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <articlle>
+            <h3>main article 1</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </articlle>
+        <articlle>
+            <h3>main article 2</h3>
+            <p>Modi, at? Consequuntur, ducimus sunt.</p>
+        </articlle>
+    </main>
+    <aside>
+        <div class="sidebar">
+            <h4>side bar</h4>
+        </div>
+        <div class="advertise">
+            <h4>advertise</h4>
+        </div>
+    </aside>
+    <footer class="footer">
+        <h3>footer</h3>
+    </footer>
+</body>
+</html>
